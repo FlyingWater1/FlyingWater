@@ -1,3 +1,6 @@
+import com.android.build.gradle.LibraryPlugin
+
+
 apply plugin: 'java'
 
 sourceCompatibility = JavaVersion.VERSION_1_8
@@ -13,3 +16,4 @@ dependencies {
 tasks.withType(JavaCompile) {
     options.encoding = "UTF-8"
 }
+

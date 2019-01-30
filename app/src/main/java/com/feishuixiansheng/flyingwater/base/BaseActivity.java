@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -19,12 +20,14 @@ import com.feishuixiansheng.flyingwater.R;
 import com.feishuixiansheng.flyingwater.annotation.LayoutId;
 import com.feishuixiansheng.flyingwater.annotation.TitleBarInfo;
 import com.feishuixiansheng.flyingwater.exception.NoLayoutIdException;
+import com.feishuixiansheng.flyingwater.impl.ContextImpl;
+import com.feishuixiansheng.flyingwater.util.MPermissionUtils;
 import com.feishuixiansheng.flyingwater.util.SettingData;
 
 import java.util.Objects;
 
 
-public abstract class BaseActivity extends AppCompatActivity {
+public abstract class BaseActivity extends AppCompatActivity implements  ContextImpl {
 
     protected Context mContext;
 
@@ -125,6 +128,15 @@ public abstract class BaseActivity extends AppCompatActivity {
     }
 
 
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        MPermissionUtils.onRequestPermissionsResult(requestCode,permissions,grantResults);
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
 
+    }
 
+    @Override
+    public Context getContextI() {
+        return mContext;
+    }
 }
