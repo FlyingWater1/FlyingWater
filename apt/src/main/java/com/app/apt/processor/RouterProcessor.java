@@ -59,21 +59,27 @@ public class RouterProcessor implements IProcessor {
                 .addParameter(ClassName.get("android.app", "Activity"), "mContext");
 
         List<ClassName> mList = new ArrayList<>();
+
         CodeBlock.Builder blockBuilderGo = CodeBlock.builder();
         CodeBlock.Builder blockBuilderBind = CodeBlock.builder();
+
         ClassName appClassName = ClassName.get("com", "App");
         blockBuilderGo.addStatement("mCurActivityExtra=extra");
         blockBuilderGo.addStatement("Activity mContext=$T.getAppContext().getCurActivity()", appClassName);
         blockBuilderGo.beginControlFlow(" switch (name)");//括号开始
+
         blockBuilderBind.addStatement("if(mCurActivityExtra==null) return");
         blockBuilderBind.beginControlFlow(" switch (mContext.getClass().getSimpleName())");//括号开始
 
         List<RouterActivityModel> mRouterActivityModels = new ArrayList<>();
         try {
             for (TypeElement element : ElementFilter.typesIn(roundEnv.getElementsAnnotatedWith(Router.class))) {
+
                 ClassName currentType = ClassName.get(element);
+
                 if (mList.contains(currentType)) continue;
                 mList.add(currentType);
+
                 RouterActivityModel mRouterActivityModel = new RouterActivityModel();
                 mRouterActivityModel.setElement(element);
                 mRouterActivityModel.setActionName(element.getAnnotation(Router.class).value());

@@ -21,6 +21,7 @@ public class PermissionActivity extends BaseActivity implements View.OnClickList
     @Override
     protected void initDate() {
 
+
     }
 
     @Override

@@ -1,4 +1,4 @@
-package com.feishuixiansheng.flyingwater.util;
+package com.feishuixiansheng.flyingwater.data;
 
 /**
  * @author dupengfei
