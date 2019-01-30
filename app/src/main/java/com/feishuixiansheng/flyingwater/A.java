@@ -10,6 +10,7 @@ import com.app.annotation.apt.InstancePresenter;
 @InstancePresenter
 public class A {
     //ddddd
+    String name;
     public  A (){
 
     }
