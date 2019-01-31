@@ -18,18 +18,24 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
+
+        </activity>
+        <activity android:name=".permission.PermissionActivity"></activity>
+        <activity android:name=".permission.Permission1Activity" />
+        <activity android:name=".permission.Permission2Activity" />
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".list.RecyclerViewActivity">
+
+        </activity>
+        <activity android:name=".list.ListViewActivity" >
+        </activity>
+        <activity android:name=".list.GridViewActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".permission.PermissionActivity">
-
-        </activity>
-        <activity android:name=".permission.Permission1Activity"></activity>
-        <activity android:name=".permission.Permission2Activity" />
-        <activity android:name=".LoginActivity"></activity>
     </application>
 
 </manifest>

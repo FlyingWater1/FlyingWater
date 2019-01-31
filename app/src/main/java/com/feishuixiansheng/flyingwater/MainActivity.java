@@ -27,10 +27,10 @@ public class MainActivity extends BaseMvpActivity<P> implements View.OnClickList
         tv_main.setOnClickListener(this);
     }
 
-    @Override
-    public P createPresenter() {
-        return new P();
-    }
+//    @Override
+//    public P createPresenter() {
+//        return new P();
+//    }
 
     @Override
     public void onClick(View v) {

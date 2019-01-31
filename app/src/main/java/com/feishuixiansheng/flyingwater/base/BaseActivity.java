@@ -11,6 +11,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.Window;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -26,7 +27,7 @@ import com.feishuixiansheng.flyingwater.data.SettingData;
 import java.util.Objects;
 
 
-public abstract class BaseActivity extends AppCompatActivity implements  ContextImpl {
+public abstract class BaseActivity extends AppCompatActivity implements ContextImpl {
 
     protected Context mContext;
 
@@ -55,7 +56,7 @@ public abstract class BaseActivity extends AppCompatActivity implements  Context
 //            setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         }
 
-        if (SettingData.isNoTitle){
+        if (SettingData.isNoTitle) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
                 Objects.requireNonNull(getSupportActionBar()).hide();
             }
@@ -66,7 +67,6 @@ public abstract class BaseActivity extends AppCompatActivity implements  Context
         initView1();
         setContent();
 
-//        TitleBarInfo
         TitleBarInfo titleBarInfo = getClass().getAnnotation(TitleBarInfo.class);
         if (null != titleBarInfo) {
             tvTitle.setText(titleBarInfo.titleText());
@@ -84,11 +84,11 @@ public abstract class BaseActivity extends AppCompatActivity implements  Context
         //通过注解LayoutId 进行 setContentView
         LayoutId layoutId = getClass().getAnnotation(LayoutId.class);
 
-        int layoutIdV = layoutId==null?getContentViewId():layoutId.value();
+        int layoutIdV = layoutId == null ? getContentViewId() : layoutId.value();
 
-        Log.e("setContentsetContent",layoutIdV+"setContent" );
-        if (layoutIdV != 0){
-            LayoutInflater.from(this).inflate(layoutIdV,llContent,true);
+        Log.e("setContentsetContent", layoutIdV + "setContent");
+        if (layoutIdV != 0) {
+            LayoutInflater.from(this).inflate(layoutIdV, llContent, true);
         } else {
             throw new NoLayoutIdException(this.getClass().getCanonicalName());
         }
@@ -100,11 +100,11 @@ public abstract class BaseActivity extends AppCompatActivity implements  Context
 
 
     private void initView1() {
-        btnBack = (ImageView) findViewById(R.id.btn_back);
-        tvTitle = (TextView) findViewById(R.id.tv_title);
-        imgToolbarRight = (ImageView) findViewById(R.id.img_toolbar_right);
-        tvToolbarRight = (TextView) findViewById(R.id.tv_toolbar_right);
-        llContent = (LinearLayout) findViewById(R.id.ll_content);
+        btnBack = findViewById(R.id.btn_back);
+        tvTitle = findViewById(R.id.tv_title);
+        imgToolbarRight = findViewById(R.id.img_toolbar_right);
+        tvToolbarRight = findViewById(R.id.tv_toolbar_right);
+        llContent = findViewById(R.id.ll_content);
 
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -118,9 +118,9 @@ public abstract class BaseActivity extends AppCompatActivity implements  Context
         tvToolbarRight.setOnClickListener(onRightTextClickListener);
     }
 
-//    public void setOnRightImageClickListener(View.OnClickListener onRightImageClickListener) {
-//        imgToolbarRight.setOnClickListener(onRightImageClickListener);
-//    }
+    public void setOnRightImageClickListener(View.OnClickListener onRightImageClickListener) {
+        imgToolbarRight.setOnClickListener(onRightImageClickListener);
+    }
 
     public void setTitle(String title) {
         tvTitle.setText(title);
@@ -129,7 +129,7 @@ public abstract class BaseActivity extends AppCompatActivity implements  Context
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        MPermissionUtils.onRequestPermissionsResult(requestCode,permissions,grantResults);
+        MPermissionUtils.onRequestPermissionsResult(requestCode, permissions, grantResults);
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
 
     }

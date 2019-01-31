@@ -12,7 +12,7 @@ import java.lang.annotation.Target;
  * @create 2019/1/28 0028
  * @Describe
  */
-@Retention(RetentionPolicy.SOURCE)
+@Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.TYPE)
 public @interface TitleBarInfo {
     //标题
