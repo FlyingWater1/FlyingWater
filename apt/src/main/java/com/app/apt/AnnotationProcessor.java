@@ -1,6 +1,6 @@
 package com.app.apt;
 
-import com.app.apt.processor.AddTextViewProcessor;
+import com.app.apt.processor.AddTextProcessor;
 import com.app.apt.processor.ApiFactoryProcessor;
 import com.app.apt.processor.InstancePresenterProcessor;
 import com.app.apt.processor.InstanceProcessor;
@@ -27,7 +27,7 @@ import javax.lang.model.util.Elements;
         "com.app.annotation.apt.ApiFactory",
         "com.app.annotation.apt.Router",
         "com.app.annotation.apt.InstancePresenter",
-        "com.app.annotation.apt.AddTextView"
+        "com.app.annotation.apt.AddText"
 })
 public class AnnotationProcessor extends AbstractProcessor {
     public Filer mFiler; //文件相关的辅助类
@@ -43,7 +43,7 @@ public class AnnotationProcessor extends AbstractProcessor {
         new ApiFactoryProcessor().process(roundEnv, this);
         new InstancePresenterProcessor().process(roundEnv, this);
 //        new RouterProcessor().process(roundEnv, this);
-        new AddTextViewProcessor().process(roundEnv, this);
+        new AddTextProcessor().process(roundEnv, this);
         return true;
     }
 }
