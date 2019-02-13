@@ -1,5 +1,7 @@
 package com.feishuixiansheng.flyingwater;
 
+import android.support.annotation.IdRes;
+
 import com.app.annotation.apt.InstancePresenter;
 
 /**
@@ -10,7 +12,7 @@ import com.app.annotation.apt.InstancePresenter;
 @InstancePresenter
 public class A {
     //ddddd
-    String name;
+    @IdRes  String name;
     public  A (){
 
     }

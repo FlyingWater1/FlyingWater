@@ -11,16 +11,14 @@ import com.squareup.javapoet.MethodSpec;
 import com.squareup.javapoet.TypeName;
 import com.squareup.javapoet.TypeSpec;
 
-import java.io.File;
+
 import java.io.IOException;
 
 import javax.annotation.processing.RoundEnvironment;
 import javax.lang.model.element.Element;
-import javax.swing.text.View;
 
 import static com.google.auto.common.MoreElements.getPackage;
 import static com.squareup.javapoet.TypeSpec.classBuilder;
-import static com.squareup.javapoet.TypeSpec.enumBuilder;
 import static javax.lang.model.element.Modifier.FINAL;
 import static javax.lang.model.element.Modifier.PUBLIC;
 

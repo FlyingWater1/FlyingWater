@@ -1,7 +1,8 @@
-import com.android.build.gradle.LibraryPlugin
 
 
-apply plugin: 'java'
+
+apply plugin: 'java-library'
+apply plugin: 'checkstyle'
 
 sourceCompatibility = JavaVersion.VERSION_1_8
 targetCompatibility = JavaVersion.VERSION_1_8
@@ -10,10 +11,22 @@ dependencies {
     implementation project(':lib')
     implementation 'com.google.auto.service:auto-service:1.0-rc4'
     implementation 'com.squareup:javapoet:1.11.1'
+    //    compile deps.androidx.annotations
+//    implementation project(':compiler')
 }
 
 //  解决build警告：编码GBK的不可映射字符
 tasks.withType(JavaCompile) {
     options.encoding = "UTF-8"
 }
+
+checkstyle {
+    configFile rootProject.file('checkstyle.xml')
+    showViolations true
+    //Remove this when tests are less verbose, i.e. using JavaPoet
+    sourceSets = [sourceSets.main]
+}
+
+
+
 

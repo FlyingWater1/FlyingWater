@@ -2,6 +2,7 @@ package com.app.apt;
 
 import com.app.apt.processor.AddTextProcessor;
 import com.app.apt.processor.ApiFactoryProcessor;
+import com.app.apt.processor.FormItemProcessor;
 import com.app.apt.processor.InstancePresenterProcessor;
 import com.app.apt.processor.InstanceProcessor;
 import com.app.apt.processor.RouterProcessor;
@@ -27,7 +28,10 @@ import javax.lang.model.util.Elements;
         "com.app.annotation.apt.ApiFactory",
         "com.app.annotation.apt.Router",
         "com.app.annotation.apt.InstancePresenter",
-        "com.app.annotation.apt.AddText"
+        "com.app.annotation.apt.AddText",
+        "com.app.annotation.apt.form.FormItems",
+        "com.app.annotation.apt.form.OnFormItemClick"
+
 })
 public class AnnotationProcessor extends AbstractProcessor {
     public Filer mFiler; //文件相关的辅助类
@@ -44,6 +48,7 @@ public class AnnotationProcessor extends AbstractProcessor {
         new InstancePresenterProcessor().process(roundEnv, this);
 //        new RouterProcessor().process(roundEnv, this);
         new AddTextProcessor().process(roundEnv, this);
+        new FormItemProcessor().process(roundEnv, this);
         return true;
     }
 }

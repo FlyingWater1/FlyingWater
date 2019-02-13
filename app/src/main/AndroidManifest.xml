@@ -17,17 +17,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MainActivity" />
         <activity android:name=".permission.PermissionActivity" />
         <activity android:name=".permission.Permission1Activity" />
         <activity android:name=".permission.Permission2Activity" />
         <activity android:name=".LoginActivity" />
-        <activity android:name=".list.RecyclerViewActivity"></activity>
-        <activity android:name=".list.ListViewActivity"></activity>
-        <activity android:name=".list.GridViewActivity">
+        <activity android:name=".list.RecyclerViewActivity" />
+        <activity android:name=".list.ListViewActivity" />
+        <activity android:name=".list.GridViewActivity"></activity>
+        <activity android:name=".form.FormActivity">
 
         </activity>
-        <activity android:name=".form.FormActivity">
+        <activity android:name=".form2.Formmm2Activity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

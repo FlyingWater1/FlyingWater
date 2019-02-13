@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/ll_line"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:textColor="@color/red"
+            android:id="@+id/tv_is_not_null"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="6dp"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:text="*" />
+
+        <ImageView
+            android:layout_gravity="center_vertical"
+            android:id="@+id/leftImage"
+            android:layout_width="10dp"
+            android:adjustViewBounds="true"
+            android:src="@drawable/cgsq_sqlc_arrow"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:text="盘点单类型"
+            android:textColor="#ff666666"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/tv_choose"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:hint="请选择"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:text=""
+            android:textColor="#ff333333"
+            android:textColorHint="#ffb2b2b2"
+            android:textSize="13sp" />
+
+        <ImageView
+            android:id="@+id/iv_right_ima"
+            android:layout_width="7dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="15dp"
+            android:adjustViewBounds="true"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:src="@drawable/cgsq_sqlc_arrow" />
+
+
+
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view_line"
+        android:layout_width="325dp"
+        android:layout_height="1dp"
+        android:background="#ffebebeb" />
+
+
+</LinearLayout>
+

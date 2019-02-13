@@ -2,6 +2,8 @@ package com.app.apt.inter;
 
 import com.app.apt.AnnotationProcessor;
 
+import java.lang.reflect.InvocationTargetException;
+
 import javax.annotation.processing.RoundEnvironment;
 
 /**
@@ -10,5 +12,5 @@ import javax.annotation.processing.RoundEnvironment;
  */
 
 public interface IProcessor {
-    void process(RoundEnvironment roundEnv, AnnotationProcessor mAbstractProcessor);
+    void process(RoundEnvironment roundEnv, AnnotationProcessor mAbstractProcessor) throws NoSuchMethodException, IllegalAccessException, InvocationTargetException;
 }

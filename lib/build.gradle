@@ -8,3 +8,8 @@ targetCompatibility = JavaVersion.VERSION_1_7
 tasks.withType(JavaCompile) {
     options.encoding = "UTF-8"
 }
+
+dependencies {
+    compileOnly deps.android.runtime
+    compile deps.androidx.annotations
+}

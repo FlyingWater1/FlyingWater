@@ -1,1 +1,1 @@
-include ':app', ':apt', ':lib'
+include ':app', ':apt', ':lib', ':compiler', ':common'

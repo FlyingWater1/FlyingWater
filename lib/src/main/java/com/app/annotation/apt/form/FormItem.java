@@ -1,4 +1,4 @@
-package com.app.annotation.apt;
+package com.app.annotation.apt.form;
 
 
 
@@ -16,8 +16,11 @@ public @interface FormItem {
     int  rightImage() default 0;//右边图片
     boolean rightNotNull() default false;
     String rightHint() default "";
+    LineWidth lineWidth() default LineWidth.thin;
+    boolean clickable() default true;
+    String inputType() default "";
 
-
-
-
+    enum LineWidth {
+        thick, thin
+    }
 }
