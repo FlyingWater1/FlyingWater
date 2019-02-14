@@ -26,14 +26,14 @@
         <activity android:name=".list.ListViewActivity" />
         <activity android:name=".list.GridViewActivity"></activity>
         <activity android:name=".form.FormActivity">
-
-        </activity>
-        <activity android:name=".form2.Formmm2Activity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".form2.Formmm2Activity">
+
         </activity>
     </application>
 

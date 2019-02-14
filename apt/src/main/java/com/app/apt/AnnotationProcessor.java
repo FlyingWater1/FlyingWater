@@ -13,6 +13,7 @@ import java.util.Set;
 import javax.annotation.processing.AbstractProcessor;
 import javax.annotation.processing.Filer;
 import javax.annotation.processing.Messager;
+import javax.annotation.processing.ProcessingEnvironment;
 import javax.annotation.processing.Processor;
 import javax.annotation.processing.RoundEnvironment;
 import javax.annotation.processing.SupportedAnnotationTypes;
@@ -37,6 +38,8 @@ public class AnnotationProcessor extends AbstractProcessor {
     public Filer mFiler; //文件相关的辅助类
     public Elements mElements; //元素相关的辅助类
     public Messager mMessager; //日志相关的辅助类
+    private Filer filer;
+    private Filer filer1;
 
     @Override
     public boolean process(Set<? extends TypeElement> annotations, RoundEnvironment roundEnv) {
@@ -48,7 +51,16 @@ public class AnnotationProcessor extends AbstractProcessor {
         new InstancePresenterProcessor().process(roundEnv, this);
 //        new RouterProcessor().process(roundEnv, this);
         new AddTextProcessor().process(roundEnv, this);
+
         new FormItemProcessor().process(roundEnv, this);
+
         return true;
+    }
+
+    @Override
+    public synchronized void init(ProcessingEnvironment processingEnvironment) {
+        super.init(processingEnvironment);
+
+        filer1 = processingEnvironment.getFiler();
     }
 }

@@ -3,6 +3,7 @@ import org.aspectj.bridge.IMessage
 import org.aspectj.bridge.MessageHandler
 import org.aspectj.tools.ajc.Main
 
+
 buildscript {
     repositories {
         mavenCentral()
@@ -78,6 +79,11 @@ android {
 //    packagingOptions {
 //        exclude 'META-INF/proguard/androidx-annotations.pro'
 //    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
@@ -100,4 +106,8 @@ dependencies {
 
     implementation project(':common')
     annotationProcessor project(':apt')
+    implementation 'com.contrarywind:Android-PickerView:3.2.7'
+    implementation('cn.qqtheme.framework:WheelPicker:1.4.5') {
+        exclude group: 'com.android.support'
+    }
 }

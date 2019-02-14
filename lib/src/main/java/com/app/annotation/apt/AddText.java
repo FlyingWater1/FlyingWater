@@ -19,7 +19,4 @@ import java.lang.annotation.Target;
 @Target(ElementType.TYPE)
 public @interface AddText {
      String value();
-
-    @IdRes int df();
-
 }
