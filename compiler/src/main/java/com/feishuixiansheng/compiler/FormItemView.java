@@ -40,7 +40,7 @@ public class FormItemView extends RelativeLayout {
     private TextView tvName;
     private ImageView ivRightIma;
     private ImageView ivLeftIma;
-    private String inputType;
+    private String inputType = "";
     private Class tClass;
 
     public FormItemView(Context context) {

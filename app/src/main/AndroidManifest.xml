@@ -17,7 +17,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity" />
+        <activity android:name=".MainActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".permission.PermissionActivity" />
         <activity android:name=".permission.Permission1Activity" />
         <activity android:name=".permission.Permission2Activity" />
@@ -26,11 +32,7 @@
         <activity android:name=".list.ListViewActivity" />
         <activity android:name=".list.GridViewActivity"></activity>
         <activity android:name=".form.FormActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".form2.Formmm2Activity">
 

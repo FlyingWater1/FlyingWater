@@ -22,7 +22,7 @@ public class TestBean {
 
     public static class Bean2{
         String namename;
-        String ididididid;
+        String id;
 
         public String getNamename() {
             return namename;
@@ -32,12 +32,12 @@ public class TestBean {
             this.namename = namename;
         }
 
-        public String getIdidididid() {
-            return ididididid;
+        public String getId() {
+            return id;
         }
 
-        public void setIdidididid(String ididididid) {
-            this.ididididid = ididididid;
+        public void setId(String id) {
+            this.id = id;
         }
     }
 }

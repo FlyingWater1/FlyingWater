@@ -1,7 +1,7 @@
 package com.feishuixiansheng.flyingwater.util;
 
 
-//import com.apt.InstanceFactoryPresenter;
+import com.apt.InstanceFactoryPresenter;
 
 /**
  * Created by baixiaokang on 16/4/30.
@@ -16,7 +16,7 @@ public class InstanceUtil {
      */
     public static <T> T getInstance(Class clazz) {
         try {
-//            return (T) InstanceFactoryPresenter.create(clazz);
+            return (T) InstanceFactoryPresenter.create(clazz);
         } catch (Exception e) {
             e.printStackTrace();
         }

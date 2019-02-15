@@ -269,44 +269,6 @@ public class FormItemProcessor implements IProcessor {
 
         erasedTargetNames.add(enclosingElement);
 
-
-//        for (Element element : roundEnv.getElementsAnnotatedWith(OnFormItemClick.class)) {
-//            if (!(element instanceof ExecutableElement) || element.getKind() != METHOD) {
-//                throw new IllegalStateException(
-//                        String.format("@%s annotation must be on a method.", OnFormItemClick.class.getSimpleName()));
-//            }
-//
-//            executableElement = (ExecutableElement) element;
-//            TypeElement enclosingElement = (TypeElement) element.getEnclosingElement();
-//
-//            // Assemble information on the method.
-//            Annotation annotation = element.getAnnotation(OnFormItemClick.class);
-//            Method annotationValue = null;
-//            try {
-//                annotationValue = OnFormItemClick.class.getDeclaredMethod("value");
-//            } catch (NoSuchMethodException e) {
-//                e.printStackTrace();
-//            }
-//            if (annotationValue.getReturnType() != String[].class) {
-//                throw new IllegalStateException(
-//                        String.format("@%s annotation value() type not String[].", OnFormItemClick.class));
-//            }
-//
-//            try {
-//                //获取到的类型（直接文字，无文字，输入，单选，时间）
-//                String[] types = (String[]) annotationValue.invoke(annotation);
-//
-//
-//            } catch (IllegalAccessException e) {
-//                e.printStackTrace();
-//            } catch (InvocationTargetException e) {
-//                e.printStackTrace();
-//            }
-//
-//
-//        }
-
-
     }
 
     private void parseFormItems(Element element, Map<TypeElement, BindingSet.Builder> builderMap, Set<TypeElement> erasedTargetNames) {
@@ -335,90 +297,6 @@ public class FormItemProcessor implements IProcessor {
         erasedTargetNames.add(enclosingElement);
 
 
-    }
-
-    private MethodSpec createBindingConstructorForActivity(RoundEnvironment roundEnv, TypeName targetTypeName, TypeSpec.Builder tb, int formLayout) {
-
-        MethodSpec.Builder builder = MethodSpec.constructorBuilder()
-                .addModifiers(PUBLIC)
-                .addAnnotation(UiThread.class)
-                .addParameter(targetTypeName, "target", FINAL);
-
-        ClassName VIEW = ClassName.get("android.view", "View");
-        ClassName VIEW_GROUP = ClassName.get("android.view", "ViewGroup");
-        ClassName TEXT_VIEW = ClassName.get("android.widget", "TextView");
-        ClassName LinearLayout = ClassName.get("android.widget", "LinearLayout");
-
-        builder.addStatement("$T formLayout = target.findViewById($L)", VIEW, formLayout);
-
-        builder.beginControlFlow("if (formLayout instanceof $T)", LinearLayout);//括号开始
-
-
-//        builder.addStatement("$T viewById = target.getWindow().getDecorView().findViewById(android.R.id.content)", VIEW);
-//        builder.beginControlFlow("if (viewById instanceof $T )", VIEW_GROUP);//括号开始
-//        builder.addStatement("ViewGroup viewGroup = (ViewGroup) viewById");
-//        builder.addStatement("View childAt = viewGroup.getChildAt(0)");
-//
-//        builder.beginControlFlow("if (childAt instanceof ViewGroup)");
-
-
-//        if (formItems.length > 0) {
-//
-//            for (int i = 0; i < formItems.length; i++) {
-//                builder.addStatement("$L = new $T(target)", nameL + i, FormItemView);
-//                builder.addStatement("$L.setName($S)", nameL + i, formItems[i].leftName());
-//
-//
-//                if (formItems[i].leftImage() != 0) {
-//                    builder.addStatement("$L.setLeftIma($L)", nameL + i, formItems[i].leftImage());
-//                }
-//
-//                if (formItems[i].rightNotNull()) {
-//                    builder.addStatement("$L.isNotNull($L)", nameL + i, formItems[i].rightNotNull());
-//                }
-//
-//                if (!formItems[i].inputType().equals("")) {
-//                    builder.addStatement("$L.setInputType($S)", nameL + i, formItems[i].inputType());
-//                }
-//
-//
-//                //设置点击事件
-//                if (formItems[i].clickable()) {
-//
-//                    //如果Activity中有被OnFormItemClick注解过的方法名，才进行操作
-//                    if (executableElement != null) {
-//
-//                        List<? extends VariableElement> parameters = executableElement.getParameters();
-//                        boolean check = checkParameters(parameters);
-//
-//                        if (check) {
-//                            String methodName1 = executableElement.getSimpleName().toString();
-//                            TypeSpec.Builder callback = TypeSpec.anonymousClassBuilder("")
-//                                    .superclass(bestGuess(type));
-//
-//                            MethodSpec.Builder callbackMethod = MethodSpec.methodBuilder(methodName)
-//                                    .addAnnotation(Override.class)
-//                                    .addModifiers(PUBLIC);
-//                            //回掉中的参数
-//                            callbackMethod.addParameter(bestGuess(parameterTypes[0]), "view");
-//                            callbackMethod.addStatement("target.$L($L.getInputType())", methodName1, nameL + i);
-//
-//                            callback.addMethod(callbackMethod.build());
-//
-//                            builder.addStatement("$L.$L($L)", nameL + i, setter, callback.build());
-//                        }
-//                    }
-//                }
-//                builder.addStatement("((LinearLayout)formLayout).addView($L)", nameL + i);
-//            }
-//        }
-
-//        builder.endControlFlow();
-//        builder.endControlFlow();
-        builder.endControlFlow();
-
-
-        return builder.build();
     }
 
     private boolean checkParameters(List<? extends VariableElement> parameters) {

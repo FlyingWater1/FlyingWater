@@ -63,13 +63,13 @@ public class FormActivity extends AppCompatActivity {
                         mString3 = new ArrayList<>();
                         TestBean.Bean2 sdad1 = new TestBean.Bean2();
                         sdad1.setNamename("asdasdfda1");
-                        sdad1.setIdidididid("1111");
+                        sdad1.setId("1111");
                         TestBean.Bean2 sdad2 = new TestBean.Bean2();
                         sdad2.setNamename("asdasdfda2");
-                        sdad2.setIdidididid("2222");
+                        sdad2.setId("2222");
                         TestBean.Bean2 sdad3 = new TestBean.Bean2();
                         sdad3.setNamename("asdasdfda3");
-                        sdad3.setIdidididid("3333");
+                        sdad3.setId("3333");
                         mString3.add(sdad1);
                         mString3.add(sdad2);
                         mString3.add(sdad3);
@@ -96,9 +96,13 @@ public class FormActivity extends AppCompatActivity {
     }
 
     private void submit() {
+        Object getIdidididid = FormItemUtils.getValueChoosed(2, "id");
+        if (getIdidididid!=null){
+            Toast.makeText(this, "姓名3 对应的id为"+(String)getIdidididid, Toast.LENGTH_LONG).show();
+        } else {
+            Toast.makeText(this, "姓名3 请选择", Toast.LENGTH_LONG).show();
+        }
 
-        Object getIdidididid = FormItemUtils.getValueChoosed(2, "ididididid");
-        Toast.makeText(this, (String)getIdidididid, Toast.LENGTH_LONG).show();
     }
 
     @OnFormItemClick(value = {OnFormItemClick.InputType.Text, OnFormItemClick.InputType.Single})
@@ -115,6 +119,7 @@ public class FormActivity extends AppCompatActivity {
                     }).show();
                 }
                 break;
+
         }
     }
 }
