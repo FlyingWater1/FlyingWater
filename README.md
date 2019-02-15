@@ -3,7 +3,9 @@
 ### 1.实现功能
 #### 1.一行注解申请权限
 #### 2.使用代理模式实现网络图片加载框架的转换（如Glide变picasso），网络请求框架的修改（进行中）
-#### 3.通过注解实现输入列表（左边一个属性名，右边是输入框或者选择器）的快速搭建（进行中）
+#### 3.通过注解实现输入列表（左边一个属性名，右边是输入框或者选择器）的快速搭建（基本完成，暂时不再优化）
+#### 3.1 目前缺陷：只能是一种布局方式，不能自定义其他布局方式，以后可能考虑SuperTextView
+#### 3.2 暂未完成：item显示类型，是否有粗/细线，自定义粗细线布局，自定义item布局（只能是一种布局方式）
 #### 4.RecyclerView 与 ListView ，GridView 等 AbsListView （凡是可以设置adapter为BaseAdapter的控件）通用的CommonAdapter 以及CommonViewHolder
 ### 2.后期计划加入的功能
 #### 1.生成mvp代码的工具（idea开发的插件或者Template）
@@ -17,3 +19,7 @@
 #### 9.一些高级ui自定义View
 #### 10.插件化
 #### 11.md风格
+### 3.参考的工程
+- [T-MVP](https://github.com/north2016/T-MVP)
+- [Android-ZBLibrary](https://github.com/TommyLemon/Android-ZBLibrary)
+- [butterknife](https://github.com/JakeWharton/butterknife)
