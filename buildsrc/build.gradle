@@ -1,9 +1,25 @@
 apply plugin: 'groovy'
+apply plugin: 'maven'
 
 dependencies {
-    compile gradleApi()
-    compile localGroovy()
+    implementation gradleApi()
+    implementation localGroovy()
+    implementation 'com.android.tools.build:gradle:3.2.1'
+    implementation 'org.javassist:javassist:3.24.1-GA'
+    implementation 'org.aspectj:aspectjtools:1.9.2'
 }
 repositories {
     mavenCentral()
+    jcenter()
+    google()
+}
+
+
+uploadArchives {
+    repositories.mavenDeployer {
+        repository(url: uri('../repoa')) //仓库的路径，此处是项目根目录下的 repo 的文件夹
+        pom.groupId = 'com.deemons.bus'  //groupId ，自行定义，一般是包名
+        pom.artifactId = 'okBus' //artifactId ，自行定义
+        pom.version = '1.0.0' //version 版本号
+    }
 }

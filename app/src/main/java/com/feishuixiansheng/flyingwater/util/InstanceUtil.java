@@ -1,9 +1,9 @@
 package com.feishuixiansheng.flyingwater.util;
 
 
-import com.apt.InstanceFactoryPresenter;
-
 //import com.apt.InstanceFactoryPresenter;
+
+import com.apt.InstanceFactoryPresenter;
 
 /**
  * Created by baixiaokang on 16/4/30.

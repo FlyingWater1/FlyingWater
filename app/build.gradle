@@ -1,9 +1,13 @@
 apply plugin: 'com.android.application'
-
-apply plugin: 'flyingwater'
-apply plugin: 'maven'
-apply plugin: 'flying'
+//import com.app.plugin.AspectjPlugin
+//import com.app.plugin.JavassistPlugin
+//apply plugin: 'flyingwater'
+//apply plugin: 'maven'
+//apply plugin: 'flying'
 //apply plugin: 'myInfo'
+
+//apply plugin: AspectjPlugin
+//apply plugin: JavassistPlugin
 
 
 import org.aspectj.bridge.IMessage
@@ -15,28 +19,31 @@ buildscript {
     repositories {
         mavenCentral()
         maven { url uri("../repo") }
+        maven { url uri("../repo2") }
     }
     dependencies {
         classpath 'org.aspectj:aspectjtools:1.8.9'
         classpath 'org.aspectj:aspectjweaver:1.8.9'
 
-        classpath 'com.bobo.plugin:pluginlibrary:3.0.0'
+//        classpath 'com.bobo.plugin:pluginlibrary:3.0.0'
     }
 }
 
 
-personInfo{
-     name = "name";
-     age = 0
-     sex = "男"
-     address = "address"
-     company = "company"
-     companyAddress = "companyAddress"
-}
+//personInfo{
+//     name = "name";
+//     age = 0
+//     sex = "男"
+//     address = "address"
+//     company = "company"
+//     companyAddress = "companyAddress"
+//}
 
 repositories {
     mavenCentral()
 }
+
+
 final def log = project.logger
 final def variants = project.android.applicationVariants
 variants.all { variant ->
@@ -89,6 +96,12 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        renderscriptTargetApi 20
+        renderscriptSupportModeEnabled true
+        vectorDrawables.useSupportLibrary = true
+
+
     }
     buildTypes {
         release {

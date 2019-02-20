@@ -1,11 +1,6 @@
 package com.feishuixiansheng.flyingwater.aop;
 
-import android.content.Context;
-import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
-
 import com.app.annotation.aspect.Permission;
-import com.feishuixiansheng.flyingwater.App;
 import com.feishuixiansheng.flyingwater.impl.ContextImpl;
 import com.feishuixiansheng.flyingwater.util.MPermissionUtils;
 
