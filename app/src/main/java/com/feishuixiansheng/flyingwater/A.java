@@ -12,7 +12,7 @@ import com.app.annotation.apt.InstancePresenter;
 @InstancePresenter
 public class A {
     //ddddd
-    @IdRes  String name;
+    String name;
     public  A (){
 
     }

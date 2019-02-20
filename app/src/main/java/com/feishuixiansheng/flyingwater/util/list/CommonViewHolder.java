@@ -3,15 +3,10 @@ package com.feishuixiansheng.flyingwater.util.list;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.util.SparseArray;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import com.bumptech.glide.Glide;
 import com.feishuixiansheng.flyingwater.image.ImageHelper;
-import com.feishuixiansheng.flyingwater.image.ImageLoader;
 
 /**
  * @author dupengfei

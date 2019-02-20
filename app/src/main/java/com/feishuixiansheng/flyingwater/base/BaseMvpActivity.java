@@ -6,7 +6,6 @@ import android.support.annotation.Nullable;
 import com.app.annotation.apt.InstanceFactory;
 import com.feishuixiansheng.flyingwater.exception.NoPresenterInstanceException;
 import com.feishuixiansheng.flyingwater.util.InstanceUtil;
-//import com.feishuixiansheng.flyingwater.util.InstanceUtil;
 
 import java.lang.reflect.ParameterizedType;
 

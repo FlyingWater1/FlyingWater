@@ -1,6 +1,5 @@
 package com.feishuixiansheng.flyingwater.list;
 
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.GridView;
 import android.widget.Toast;
