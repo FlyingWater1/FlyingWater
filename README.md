@@ -12,16 +12,15 @@
 ##### 5.2 OkBus.getInstance().onEvent()方法写在onCreate方法中无效，原因是因为生成的class文件中register方法在onEvent方法之后，改变BusHelper的代码使onEvent在register之后调用即可，我这里没有进行修改，[点这里](https://github.com/north2016/T-MVP/issues/40)
 ### 2.后期计划加入的功能
 #### 1.生成mvp代码的工具（idea开发的插件或者Template）
-#### 2.Javassist
-#### 3.自己写的数据库框架
-#### 4.jni（计划中）
-#### 5.换肤
-#### 6.安卓进程间通信，进程保活
-#### 7.音视频
-#### 8.React Native
-#### 9.一些高级ui自定义View
-#### 10.插件化
-#### 11.md风格
+#### 2.自己写的数据库框架
+#### 3.jni（计划中）
+#### 4.换肤
+#### 5.安卓进程间通信，进程保活
+#### 6.音视频
+#### 7.React Native
+#### 8.一些高级ui自定义View
+#### 9.插件化
+#### 10.md风格
 ### 3.参考的工程
 - [T-MVP](https://github.com/north2016/T-MVP)
 - [Android-ZBLibrary](https://github.com/TommyLemon/Android-ZBLibrary)
