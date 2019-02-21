@@ -9,7 +9,7 @@
 #### 4.RecyclerView 与 ListView ，GridView 等 AbsListView （凡是可以设置adapter为BaseAdapter的控件）通用的CommonAdapter 以及CommonViewHolder
 #### 5.将T_MVP工程中的javassist相关代码（ OkBus方面的）整合到自己的工程中，代码完全复制的[T-MVP](https://github.com/north2016/T-MVP)，没有改动，其中发现的问题
 ##### 5.1 必须依赖上realm，否则会报错，不知是什么原因 ， [点这里](https://github.com/north2016/T-MVP/issues/39)
-##### 5.2 OkBus.getInstance().onEvent()方法写在onCreate方法中无效，原因是因为生成的class文件中register方法在onEvent方法之后，改变BusHelper的代码使onEvent在register之后调用即可，我这里没有进行修改，[点这里](https://github.com/north2016/T-MVP/issues/40)
+##### 5.2 OkBus.getInstance().onEvent()方法写在onCreate方法中无效，原因是因为生成的class文件中register方法在onEvent方法之后，改变BusHelper的代码使onEvent在register之后调用即可，[点这里](https://github.com/north2016/T-MVP/issues/40)，可以将BusHelper的第56行insertAfter改为insertBefore，这里我这里没有进行修改
 ### 2.后期计划加入的功能
 #### 1.生成mvp代码的工具（idea开发的插件或者Template）
 #### 2.自己写的数据库框架
