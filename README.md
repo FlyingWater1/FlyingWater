@@ -7,7 +7,7 @@
 #### 3.1 目前缺陷：只能是一种布局方式，不能自定义其他布局方式，以后可能考虑SuperTextView
 #### 3.2 暂未完成：item显示类型，是否有粗/细线，自定义粗细线布局，自定义item布局（只能是一种布局方式）
 #### 4.RecyclerView 与 ListView ，GridView 等 AbsListView （凡是可以设置adapter为BaseAdapter的控件）通用的CommonAdapter 以及CommonViewHolder
-#### 5.将T_MVP工程中的javassist相关代码（ OkBus方面的）整合到自己的工程中，代码使复制的T_MVP，没有改动，其中发现的问题
+#### 5.将T_MVP工程中的javassist相关代码（ OkBus方面的）整合到自己的工程中，代码完全复制的[T-MVP](https://github.com/north2016/T-MVP)，没有改动，其中发现的问题
 ##### 5.1 必须依赖上realm，否则会报错，不知是什么原因 ， [点这里](https://github.com/north2016/T-MVP/issues/39)
 ##### 5.2 OkBus.getInstance().onEvent()方法写在onCreate方法中无效，原因是因为生成的class文件中register方法在onEvent方法之后，改变BusHelper的代码使onEvent在register之后调用即可，我这里没有进行修改，[点这里](https://github.com/north2016/T-MVP/issues/40)
 ### 2.后期计划加入的功能
