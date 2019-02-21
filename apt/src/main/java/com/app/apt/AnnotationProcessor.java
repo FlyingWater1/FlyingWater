@@ -31,7 +31,8 @@ import javax.lang.model.util.Elements;
         "com.app.annotation.apt.InstancePresenter",
         "com.app.annotation.apt.AddText",
         "com.app.annotation.apt.form.FormItems",
-        "com.app.annotation.apt.form.OnFormItemClick"
+        "com.app.annotation.apt.form.OnFormItemClick",
+
 
 })
 public class AnnotationProcessor extends AbstractProcessor {

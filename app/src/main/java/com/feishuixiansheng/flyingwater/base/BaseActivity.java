@@ -11,7 +11,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.Window;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -19,10 +18,10 @@ import android.widget.TextView;
 import com.feishuixiansheng.flyingwater.R;
 import com.feishuixiansheng.flyingwater.annotation.LayoutId;
 import com.feishuixiansheng.flyingwater.annotation.TitleBarInfo;
+import com.feishuixiansheng.flyingwater.data.SettingData;
 import com.feishuixiansheng.flyingwater.exception.NoLayoutIdException;
 import com.feishuixiansheng.flyingwater.impl.ContextImpl;
 import com.feishuixiansheng.flyingwater.util.MPermissionUtils;
-import com.feishuixiansheng.flyingwater.data.SettingData;
 
 import java.util.Objects;
 

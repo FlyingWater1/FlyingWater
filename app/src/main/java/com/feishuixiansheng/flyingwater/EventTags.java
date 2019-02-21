@@ -5,7 +5,8 @@ package com.feishuixiansheng.flyingwater;
  * @create 2019/2/20 0020
  * @Describe
  */
-interface EventTags {
+public interface EventTags {
 
     int JUMP_TO_MAIN = 0;
+    int JUMP_TO_MAIN2 = 1;
 }

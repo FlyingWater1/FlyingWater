@@ -11,7 +11,6 @@ import com.feishuixiansheng.flyingwater.App;
 import com.feishuixiansheng.flyingwater.R;
 
 
-import java.util.ArrayList;
 import java.util.List;
 
 import cn.qqtheme.framework.picker.DatePicker;

@@ -1,30 +1,83 @@
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
+//// Top-level build file where you can add configuration options common to all sub-projects/modules.
+//
+//buildscript {
+//
+//    repositories {
+//        google()
+//        jcenter()
+//
+//
+//        maven{
+//            url uri('repo2')
+//        }
+//
+//    }
+//    dependencies {
+//        classpath 'com.android.tools.build:gradle:3.2.1'
+//        classpath 'com.hujiang.aspectjx:gradle-android-plugin-aspectjx:1.1.1'
+//        classpath 'me.tatarka:gradle-retrolambda:3.2.0'
+//        classpath "io.realm:realm-gradle-plugin:3.4.0"
+//        // NOTE: Do not place your application dependencies here; they belong
+//        // in the individual module build.gradle files
+////        classpath 'com.deemons.bus:okBus:1.0.0'
+//
+//        classpath 'com.app.pluginaaaa:gradlepluginaaaa:1.0.0'
+//
+//    }
+//
+//
+//
+//    ext.deps = [
+//            android: [
+//                    'runtime': 'com.google.android:android:4.1.1.4',
+//                    'gradlePlugin': "com.android.tools.build:gradle:3.1.4",
+//            ],
+//            'androidx': [
+//                    'core': "androidx.core:core:1.0.0",
+//                    'annotations': "com.android.support:support-annotations:28.0.0",
+////                    'annotations': "androidx.annotation:annotation:1.0.0",
+//                    'test': [
+//                            'runner': 'androidx.test:runner:1.1.0',
+//                            'rules': 'androidx.test:rules:1.1.0',
+//                    ],
+//            ]
+//    ]
+//}
+//
+//allprojects {
+//    repositories {
+//        google()
+//        jcenter()
+//
+//    }
+//}
+//
+//task clean(type: Delete) {
+//    delete rootProject.buildDir
+//}
+//task compileJava {}
+//
+//task testClasses{}
+//
+//task assemble{}
 
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
-    
     repositories {
         google()
         jcenter()
         maven{
             url uri('repo')
         }
-        maven{
-            url uri('repoa')
-        }
-
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.2.1'
-        classpath 'com.hujiang.aspectjx:gradle-android-plugin-aspectjx:1.1.1'
-        classpath 'me.tatarka:gradle-retrolambda:3.2.0'
-        // NOTE: Do not place your application dependencies here; they belong
-        // in the individual module build.gradle files
-        classpath 'com.deemons.bus:okBus:1.0.0'
+        classpath 'org.aspectj:aspectjtools:1.9.2'
+        classpath 'com.app.plugin:gradleplugin:1.0.0'
+        classpath "io.realm:realm-gradle-plugin:3.4.0"
     }
 
-
-
-    ext.deps = [
+        ext.deps = [
             android: [
                     'runtime': 'com.google.android:android:4.1.1.4',
                     'gradlePlugin': "com.android.tools.build:gradle:3.1.4",
@@ -45,13 +98,14 @@ allprojects {
     repositories {
         google()
         jcenter()
-//        mavenLocal()
-
     }
 }
 
-task clean(type: Delete) {
-    delete rootProject.buildDir
-}
-task compileJava {}
+ext {
 
+
+    rxjava2Version = '2.2.4'
+    retrofit2Version = '2.2.0'
+    gsonVersion = '2.8.5'
+
+}

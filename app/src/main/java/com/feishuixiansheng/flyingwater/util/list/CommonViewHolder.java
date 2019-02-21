@@ -6,6 +6,7 @@ import android.util.SparseArray;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import com.feishuixiansheng.flyingwater.image.ImageHelper;
 
 /**
@@ -33,7 +34,7 @@ public class CommonViewHolder extends RecyclerView.ViewHolder {
         return view;
     }
 
-    public CommonViewHolder setText(int viewId,String text){
+    public CommonViewHolder setText(int viewId, String text){
         View view = getView(viewId);
         if (view instanceof TextView){
             ((TextView)view).setText(text);
@@ -41,18 +42,18 @@ public class CommonViewHolder extends RecyclerView.ViewHolder {
         return this;
     }
 
-    public CommonViewHolder setOnClickListener(int viewId,View.OnClickListener onClickListener){
+    public CommonViewHolder setOnClickListener(int viewId, View.OnClickListener onClickListener){
         getView(viewId).setOnClickListener(onClickListener);
         return this;
     }
 
-    public CommonViewHolder setText(int viewId,String text,View.OnClickListener onClickListener){
+    public CommonViewHolder setText(int viewId, String text, View.OnClickListener onClickListener){
         setText(viewId,text);
         setOnClickListener(viewId,onClickListener);
         return this;
     }
 
-    public CommonViewHolder setImageView(int viewId,String imageUrl){
+    public CommonViewHolder setImageView(int viewId, String imageUrl){
         View view = getView(viewId);
         if (view instanceof ImageView){
             ImageHelper.getInstance().setImage(itemView.getContext(),(ImageView) view,imageUrl);
@@ -60,7 +61,7 @@ public class CommonViewHolder extends RecyclerView.ViewHolder {
         return this;
     }
 
-    public CommonViewHolder setImageView(int viewId,String imageUrl,View.OnClickListener onClickListener){
+    public CommonViewHolder setImageView(int viewId, String imageUrl, View.OnClickListener onClickListener){
         setImageView(viewId,imageUrl);
         setOnClickListener(viewId,onClickListener);
         return this;

@@ -1,7 +1,5 @@
 package com.feishuixiansheng.flyingwater;
 
-import android.support.annotation.IdRes;
-
 import com.app.annotation.apt.InstancePresenter;
 
 /**

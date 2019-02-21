@@ -4,6 +4,7 @@ import android.widget.TextView;
 
 import com.app.annotation.apt.InstanceFactory;
 import com.feishuixiansheng.flyingwater.Bean;
+
 import com.feishuixiansheng.flyingwater.R;
 import com.feishuixiansheng.flyingwater.util.list.CommonAdapter;
 import com.feishuixiansheng.flyingwater.util.list.CommonViewHolder;

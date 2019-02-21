@@ -1,8 +1,9 @@
 package com.feishuixiansheng.flyingwater.permission;
 
-import com.feishuixiansheng.flyingwater.R;
+
 import com.feishuixiansheng.flyingwater.annotation.LayoutId;
 import com.feishuixiansheng.flyingwater.base.BaseActivity;
+import com.feishuixiansheng.flyingwater.R;
 
 @LayoutId(R.layout.activity_permission1)
 public class Permission2Activity extends BaseActivity {

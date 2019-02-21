@@ -172,7 +172,7 @@ public class MPermissionUtils {
             throw new NullPointerException("Activity or Fragment should not be null");
         }
 
-        boolean isActivity = object instanceof android.app.Activity;
+        boolean isActivity = object instanceof Activity;
         boolean isSupportFragment = object instanceof android.support.v4.app.Fragment;
         boolean isAppFragment = object instanceof android.app.Fragment;
 

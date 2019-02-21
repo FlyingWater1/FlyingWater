@@ -1,7 +1,8 @@
 package com.feishuixiansheng.flyingwater.form2;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+
 import com.app.annotation.apt.form.FormItem;
 import com.app.annotation.apt.form.FormItems;
 import com.app.annotation.apt.form.OnFormItemClick;

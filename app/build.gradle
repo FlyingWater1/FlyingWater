@@ -1,18 +1,24 @@
+////apply plugin: 'com.android.application'
+//////import com.app.plugin.AspectjPlugin
+////import com.app.plugin.JavassistPlugin
+//////apply plugin: 'flyingwater'
+//////apply plugin: 'maven'
+//////apply plugin: 'flying'
+//////apply plugin: 'myInfo'
+////apply plugin: 'realm-android'
+//////apply plugin: AspectjPlugin
+////apply plugin: 'com.app.plugin.javassist'
+//////apply plugin: JavassistPlugin
+//
+import com.app.plugin.JavassistPlugin
+
 apply plugin: 'com.android.application'
-//import com.app.plugin.AspectjPlugin
-//import com.app.plugin.JavassistPlugin
-//apply plugin: 'flyingwater'
-//apply plugin: 'maven'
-//apply plugin: 'flying'
-//apply plugin: 'myInfo'
-
-//apply plugin: AspectjPlugin
-//apply plugin: JavassistPlugin
+apply plugin: 'realm-android'
+apply plugin: JavassistPlugin
 
 
-import org.aspectj.bridge.IMessage
-import org.aspectj.bridge.MessageHandler
-import org.aspectj.tools.ajc.Main
+
+
 
 
 buildscript {
@@ -20,6 +26,7 @@ buildscript {
         mavenCentral()
         maven { url uri("../repo") }
         maven { url uri("../repo2") }
+        maven { url uri("../repo4") }
     }
     dependencies {
         classpath 'org.aspectj:aspectjtools:1.8.9'
@@ -30,60 +37,9 @@ buildscript {
 }
 
 
-//personInfo{
-//     name = "name";
-//     age = 0
-//     sex = "男"
-//     address = "address"
-//     company = "company"
-//     companyAddress = "companyAddress"
-//}
 
 repositories {
     mavenCentral()
-}
-
-
-final def log = project.logger
-final def variants = project.android.applicationVariants
-variants.all { variant ->
-    if (!variant.buildType.isDebuggable()) {
-        log.debug("Skipping non-debuggable build type '${variant.buildType.name}'.")
-        return;
-    }
-
-    JavaCompile javaCompile = variant.javaCompile
-    javaCompile.doLast {
-        String[] args = ["-showWeaveInfo",
-                         "-1.8",
-                         "-inpath", javaCompile.destinationDir.toString(),
-                         "-aspectpath", javaCompile.classpath.asPath,
-                         "-d", javaCompile.destinationDir.toString(),
-                         "-classpath", javaCompile.classpath.asPath,
-                         "-bootclasspath", project.android.bootClasspath.join(File.pathSeparator)]
-        log.debug "ajc args: " + Arrays.toString(args)
-
-        MessageHandler handler = new MessageHandler(true);
-        new Main().run(args, handler);
-        for (IMessage message : handler.getMessages(null, true)) {
-            switch (message.getKind()) {
-                case IMessage.ABORT:
-                case IMessage.ERROR:
-                case IMessage.FAIL:
-                    log.error message.message, message.thrown
-                    break;
-                case IMessage.WARNING:
-                    log.warn message.message, message.thrown
-                    break;
-                case IMessage.INFO:
-                    log.info message.message, message.thrown
-                    break;
-                case IMessage.DEBUG:
-                    log.debug message.message, message.thrown
-                    break;
-            }
-        }
-    }
 }
 
 android {
@@ -95,7 +51,7 @@ android {
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+//        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
         renderscriptTargetApi 20
         renderscriptSupportModeEnabled true
@@ -110,14 +66,12 @@ android {
         }
     }
 
-//    packagingOptions {
-//        exclude 'META-INF/proguard/androidx-annotations.pro'
-//    }
-
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
+
 }
 
 dependencies {
@@ -136,16 +90,86 @@ dependencies {
     implementation 'com.android.support:recyclerview-v7:28.0.0'
     implementation 'com.github.bumptech.glide:glide:4.8.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.7.1'
-    //    implementation 'com.android.support:support-annotations:28.0.0'
+    implementation 'com.android.support:support-annotations:28.0.0'
 
-    implementation project(':common')
+//    implementation project(':common')
     annotationProcessor project(':apt')
     implementation 'com.contrarywind:Android-PickerView:3.2.7'
     implementation('cn.qqtheme.framework:WheelPicker:1.4.5') {
         exclude group: 'com.android.support'
     }
-
+    implementation project(':lib')
+    implementation project(':compiler')
     implementation 'org.greenrobot:eventbus:3.0.0'
 
 //    implementation 'com.github.bumptech.glide:glide:3.7.0'
 }
+
+////================分割线=================
+////================分割线=================
+////================分割线=================
+////================分割线=================
+////================分割线=================
+
+//import com.app.plugin.JavassistPlugin
+//
+//apply plugin: 'com.android.application'
+//apply plugin: 'realm-android'
+//apply plugin: JavassistPlugin
+//
+//android {
+//    compileSdkVersion 27
+//    buildToolsVersion '28.0.3'
+//
+//    defaultConfig {
+//        applicationId "cn.com.app"
+//        minSdkVersion 21
+//        targetSdkVersion 26
+//        versionCode 1
+//        versionName "1.0"
+//        renderscriptTargetApi 20
+//        renderscriptSupportModeEnabled true
+//        vectorDrawables.useSupportLibrary = true
+//    }
+//    buildTypes {
+//        release {
+//            minifyEnabled false
+//            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+//        }
+//    }
+//
+//    compileOptions {
+//        sourceCompatibility 1.8
+//        targetCompatibility 1.8
+//    }
+//
+//}
+//
+//dependencies {
+//    implementation 'com.github.todou:appbarspring:1.0.7'
+//    implementation 'io.reactivex.rxjava2:rxandroid:2.1.0'
+//
+//    implementation "io.reactivex.rxjava2:rxjava:$rootProject.ext.rxjava2Version"
+//
+//
+//    implementation "com.squareup.retrofit2:retrofit:$rootProject.ext.retrofit2Version"
+//    implementation "com.squareup.retrofit2:adapter-rxjava2:$rootProject.ext.retrofit2Version"
+//    implementation "com.squareup.retrofit2:converter-gson:$rootProject.ext.retrofit2Version"
+//    implementation "com.google.code.gson:gson: $rootProject.ext.gsonVersion"
+//    implementation 'com.squareup.okhttp3:logging-interceptor:3.12.1'
+//    implementation 'com.github.bumptech.glide:glide:3.7.0'
+////    implementation 'org.aspectj:aspectjtools:1.9.2'
+//
+//    def support_version = "27.1.1"
+//    implementation "com.android.support:design:$support_version"
+//    implementation "com.android.support:cardview-v7:$support_version"
+//    implementation "com.android.support:recyclerview-v7:$support_version"
+//    implementation "com.android.support:support-vector-drawable:$support_version"
+//    implementation "com.android.support:appcompat-v7:$support_version"
+//    implementation "com.android.support:percent:$support_version"
+//
+//    implementation project(':lib')
+//    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+//    annotationProcessor project(':apt')
+//}
+
