@@ -15,9 +15,9 @@
 #### 2.自己写的数据库框架
 #### 3.jni（计划中）
 #### 4.换肤
-  -[参考资料1文章](https://www.jianshu.com/p/29ae23b13808)
-  -[参考资料1源码](https://github.com/inPeige/skin)
-  -[参考资料2源码](https://github.com/EdisonChang33/SkinManager)
+  - [参考资料1文章](https://www.jianshu.com/p/29ae23b13808)
+  - [参考资料1源码](https://github.com/inPeige/skin)
+  - [参考资料2源码](https://github.com/EdisonChang33/SkinManager)
 #### 5.安卓进程间通信，进程保活
 #### 6.音视频
 #### 7.React Native
