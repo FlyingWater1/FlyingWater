@@ -21,16 +21,16 @@ public class Main4Activity extends AppCompatActivity {
         setContentView(R.layout.activity_main4);
 
         //写在这里不起作用
-        OkBus.getInstance().onEvent(EventTags.JUMP_TO_MAIN2);
+//        OkBus.getInstance().onEvent(EventTags.JUMP_TO_MAIN2);
 
-//        findViewById(R.id.fdfsdsfsdf).setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                //写在这里可以起作用
-////                OkBus.getInstance().onEvent(EventTags.JUMP_TO_MAIN);
-////                OkBus.getInstance().onStickyEvent(EventTags.JUMP_TO_MAIN2);
-//            }
-//        });
+        findViewById(R.id.fdfsdsfsdf).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //写在这里可以起作用
+                OkBus.getInstance().onEvent(EventTags.JUMP_TO_MAIN);
+//                OkBus.getInstance().onStickyEvent(EventTags.JUMP_TO_MAIN2);
+            }
+        });
     }
 
     @Override
