@@ -32,10 +32,11 @@
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
-                <!--<category android:name="android.intent.category.HOME" />-->
-                <!--<category android:name="android.intent.category.DEFAULT" />-->
-                <!--<category android:name="android.intent.category.MONKEY" />-->
+                <!-- <category android:name="android.intent.category.HOME" /> -->
+                <!-- <category android:name="android.intent.category.DEFAULT" /> -->
+                <!-- <category android:name="android.intent.category.MONKEY" /> -->
 
             </intent-filter>
         </activity>
@@ -54,7 +55,8 @@
             android:name=".aidl.BookManagerService"
             android:process=":remote" />
 
-        <activity android:name=".aidl.BookManagerActivity"></activity>
+        <activity android:name=".aidl.BookManagerActivity" />
+        <activity android:name=".aidl.MyAidlActivity"></activity>
     </application>
 
 </manifest>

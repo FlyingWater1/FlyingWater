@@ -8,6 +8,7 @@ import android.widget.Toast;
 
 import com.app.annotation.javassist.Bus;
 import com.feishuixiansheng.flyingwater.aidl.BookManagerActivity;
+import com.feishuixiansheng.flyingwater.aidl.MyAidlActivity;
 import com.feishuixiansheng.flyingwater.base.BaseMvpActivity;
 import com.feishuixiansheng.flyingwater.event.OkBus;
 import com.feishuixiansheng.flyingwater.form.FormActivity;
@@ -80,7 +81,8 @@ public class MainActivity extends BaseMvpActivity<P> implements View.OnClickList
                 break;
             case R.id.button5:
                 //通用的Adapter
-                mClass = BookManagerActivity.class;
+//                mClass = BookManagerActivity.class;
+                mClass = MyAidlActivity.class;
 //                AUtils.go(AN.LOGIN);
                 break;
         }

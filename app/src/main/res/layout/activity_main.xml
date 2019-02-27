@@ -7,6 +7,11 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="本页面的Toast使用OkBus" />
+
     <Button
         android:id="@+id/button1"
         android:layout_width="match_parent"
@@ -31,11 +36,30 @@
         android:layout_height="wrap_content"
         android:text="OkBus(javassist)使用!" />
 
-    <Button
-        android:id="@+id/button5"
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="aidl通讯!" />
+        android:layout_height="wrap_content">
 
+        <Button
+            android:id="@+id/button5"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="aidl通讯1!" />
+
+        <Button
+            android:id="@+id/button6"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="aidl通讯2!" />
+
+    </LinearLayout>
+
+    <TextView
+        android:text="aidl通讯1是通过AndroidManifest中设置android:process\naidl通讯2是通过创建了一个新的应用service，需要先将service安装并启动"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
 </LinearLayout>

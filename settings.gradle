@@ -1,3 +1,3 @@
-include ':app', ':apt', ':lib', ':compiler', ':common', ':pluginlibrary', ':plugin'
+include ':app', ':apt', ':lib', ':compiler', ':common', ':pluginlibrary', ':plugin', ':service'
 
 //':buildsrc',':plugin',
